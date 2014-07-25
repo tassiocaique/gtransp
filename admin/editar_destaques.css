@@ -1,0 +1,36 @@
+input, span {
+	display:block;
+}
+
+input {
+	width:600px;
+	padding:5px;
+	background:#f0f0f0;
+	border:1px solid #8f8f8f;
+}
+
+.imagem {
+	width:800px;
+	background:url('../imagens/bg.jpg');
+	padding:10px;
+	margin-bottom:10px;
+	margin-top:10px;
+	border:1px solid #3c3c3c;
+	-webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+}
+
+.head {
+	margin-top:20px;
+	padding:5px;
+	color:#626262;
+}
+
+#divisor {
+	width:820px;
+	height:3px;
+	text-align:center;
+	background:#a5a5a5;
+	margin-top:20px;
+}

@@ -1,0 +1,72 @@
+body {
+	background:#e0e0e0;
+	font-family:Arial;
+	background:url('../imagens/bg.jpg');
+}
+
+label, span {
+	display:block;
+	margin:10px;
+}
+
+input {
+	border-radius:1px;
+    -webkit-border-radius:1px;
+    -moz-border-radius:1px;
+    background-color:#f6f6f8;
+    color:#000;
+    border:1px solid #b7b7b7;
+    padding:5px;
+	width:50%;
+}
+
+#wrapper {
+	width:800px;
+	background-color:#fff;
+	margin:auto;
+	text-align:center;
+	padding:20px;
+	border-radius:0px 0px 10px 10px;
+    -webkit-border-radius:0px 0px 10px 10px;
+    -moz-border-radius:0px 0px 10px 10px;
+}
+
+#header {
+	width:840px;
+	height:100px;
+	background:#424343;
+	margin-right:auto;
+	margin-left:auto;
+	display:inherit;
+	-webkit-border-radius:10px 10px 0px 0px;
+    -moz-border-radius:10px 10px 0px 0px;
+    border-radius:10px 10px 0px 0px;
+}
+
+#logoprefeitura {
+	width:800px;
+	padding:20px;
+	margin-right:auto;
+	margin-left:auto;
+	background:#fff;
+}
+
+#logo {
+	padding:20px;
+}
+
+.button {
+	width:200px;
+	height:40px;
+	padding:10px;
+	background-color:#232323;
+	color:#fff;
+	border-radius:10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+	border:1px solid #b7b7b7;
+} 
+
+.button:hover {
+	background-color:#686868;
+}

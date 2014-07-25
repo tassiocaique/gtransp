@@ -1,0 +1,159 @@
+/*Configurações gerais*/
+html {height: 100%;}
+
+
+td {
+	padding:10px;
+ }
+body {
+	font-family:Verdana;
+	background:#f7f7f8;
+	height:100%;
+	background:url('../imagens/bg.jpg');
+}
+
+#pagina {
+	width:800px;
+	margin-right:auto;
+	margin-left:auto;
+	padding:10px;
+	background:#fff;
+	-webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+    border:1px solid #cbcbcb;
+}
+
+#identificacao {
+	width:800px;
+	height:100px;
+	margin-right:auto;
+	margin-left:auto;
+	margin-top:10px;
+	margin-bottom:10px;
+	background:url('../imagens/despesasheader.png')no-repeat;
+}
+
+#containerbusca {
+	float:right;
+	padding:20px;
+}
+
+#navegacao {
+	width:800px;
+	margin-right:auto;
+	margin-left:auto;
+}
+
+.menu {
+	height:27px;
+	margin-top:0px;
+	list-style:none;
+	font-size:12px;
+	z-index:5;
+	background:url('../imagens/menubg.png')repeat-x;
+}
+
+.menu li {
+	position:relative;
+	float:left;
+	background:url('../imagens/menubg.png')repeat-x;
+}
+
+.menu li a {
+	color:#282828;
+	text-decoration:none;
+	padding:5px 10px;
+	border-right:1px solid #d0d0d0;
+	display:block;
+}
+
+.menu li a:hover {
+	background:#282828;
+	color:#fff;
+}
+
+.menu li ul {
+	position:absolute;
+	top:25px;
+	left:0px;
+	margin-left:0px;
+	background-color:#000;
+	display:none;
+}
+
+.menu li:hover ul, .menu li.over ul {display:block;z-index:5;margin-top:-1px;}
+
+.menu li ul li {
+	display:block;
+	width:200px;
+	background-color:#000;
+	margin-left:-40px;
+}
+
+#header {
+	width:800px;
+	height:150px;
+	margin-right:auto;
+	margin-left:auto;
+}
+
+#footer {
+	width:800px;
+	height:20px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:-100px;
+	font-size:10px;
+}
+
+/*Configurações do corpo da notícia*/
+
+#rodape {
+	background:#ededed;
+	padding:10px;
+	font-size:10px;
+}
+
+#divisor {
+	width:100%;
+	height:1px;
+	background:#868686;
+	margin-bottom:20px;
+	margin-top:20px;
+}
+
+.titulo {
+	text-decoration:none;
+	font-size:22px;
+}
+
+.titulo:hover {
+	text-decoration:underline;
+	color:#fc2626;
+}
+/*----------------------------------------------------------*/
+
+.caixapesquisa {
+	width:300px;
+	padding:5px;
+	background:#eeeeee;
+	border-radius:3px;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    color:#000;
+    border:1px solid #b7b7b7;
+    padding:5px;
+}
+
+.botaopesquisa {
+	width:28px;
+	height:28px;
+	background-color:#eee;
+	background:url('../imagens/search.png')no-repeat;
+	opacity:0.8;
+}
+
+.botaopesquisa:hover {
+	opacity:1;
+}
