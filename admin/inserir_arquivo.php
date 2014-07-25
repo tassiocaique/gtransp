@@ -12,7 +12,7 @@
 		$_UP['tamanho'] = 1204 * 1024 * 2 ;
 		
 		//Extensões permitidas
-		$_UP['extensoes'] = array('pdf', 'doc', 'odt', 'docx', 'ods', 'xls', 'xlsx',  'png', 'jpg');
+		$_UP['extensoes'] = array("pdf", 'doc', 'odt', 'docx', 'ods', 'xls', 'xlsx',  'png', 'jpg');
 		
 		$_UP['renomeia'] = true;
 		
@@ -31,10 +31,9 @@
 		
 		//Faz a verificação da extensão do arquivo
 		$extensao = strtolower(end(explode(".", $_FILES['arquivo']['name'])));
-		if ((array_search($extensao, $_UP['extensoes'])) == false) {
+		if ((array_search($extensao, $_UP['extensoes'])) === false) {
 			//echo "Por favor, envie apenas arquivos com a seguintes extensões: 'pdf', 'doc', 'odt', 'docx', 'ods', 'xls', 'xlsx', 'png', 'jpg'";
 			$sucesso = false;
-		
 		} else if($_UP['tamanho'] < $_FILES['arquivo']['size']) { //Verifica o tamanho do arquivo
 			
 			$sucesso = false;

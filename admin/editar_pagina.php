@@ -16,7 +16,7 @@
 		
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 		<link href="nova_noticia.css" rel="stylesheet" type="text/css" media="screen" />
-		<title>Inserir nova notícia</title>
+		<title>Editar página</title>
 		
 		<!-- Configurações do editor de texto -->
 		<!-- Editor utilizado: TinyMCE | Site: http://www.tinymce.com/ | Documentação: http://www.tinymce.com/wiki.php -->
@@ -111,7 +111,7 @@
 							}
 						}
 				?>
-				<h1> Editar página Histórico</h1>
+				<h1> Editar página <?php echo $titulo?></h1>
 				<form method="post" action="inserir_pagina.php">
 					<label>
 						<span>Título da Página:</span>

@@ -2,11 +2,8 @@
 	
 	//Verificação de todos os campos obrigatórios estão preenchidos
 	if(isset($_POST['senha']) && isset($_POST['rsenha']) && isset($_POST['login']) && isset($_POST['asenha'])) {
-		
+		session_start();
 		//recupera os valores que foram passados no formulário	
-		$login = $_POST['login'];
-		$login = str_replace(".", "",  $login);
-		$login = str_replace("-", "", $login);
 		$senha = $_POST['senha'];
 		$rsenha = $_POST['rsenha'];
 		$asenha = $_POST['senha'];
@@ -30,7 +27,7 @@
 		//Pega o nome da tabela
 		$tabela = Conexao::getTabela('TB_USUARIO');	
 		//Comando de inserção do registro na tabela
-		$query = $db->query("UPDATE $tabela SET `$tabela`.`senha`='$whirlpool' WHERE `$tabela`.`senha`='$asenha' AND `$tabela`.`cpf`='$login'") or die(mysql_error());
+		$query = $db->query("UPDATE $tabela SET `$tabela`.`senha`='$whirlpool' WHERE `$tabela`.`cpf`=$_SESSION[login]") or die(mysql_error());
 		
 		if($query) {
 			header("location:mudar_senha.php?r=1");

@@ -7,7 +7,7 @@
 	<body>
 		<div id="pagina">
 			<div id="header">
-				<a href="#"><img src="../imagens/header.jpg"/></a>
+				<a href="../index.php"><img src="../imagens/header.jpg"/></a>
 			</div>
 			<div id="navegacao">
 				<nav>

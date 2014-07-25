@@ -36,11 +36,12 @@
 			<div id="navegacao">
 				<nav id="menu">
 					<ul>
-						<li><a href="home_admin.php">Painel</a></li>
+						<li><a href="../index.php">Visualizar Portal</a></li>
 						<li><a href="nova_noticia.php">Nova Notícia</a></li>
 						<li><a href="nova_receita.php">Nova Receita</a></li>
 						<li><a href="nova_despesa.php">Nova Despesa</a></li>
 						<li><a href="novo_upload.php">Arquivos Gerais</a></li>
+						<li><a href="mudar_senha.php">Mudar Senha</a></li>
 					</ul>
 				</nav>
 			</div>	
