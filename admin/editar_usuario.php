@@ -1,19 +1,9 @@
 <html>
  <head>
 	<?php
-			
-			session_start();
-			
-			if ((!isset($_SESSION['login']) == true) && (!isset($_SESSION['senha']) == true) 
-				&& (!isset($_SESSION['admin']) == true)) {
-					
-					unset($_SESSION['login']);
-					unset($_SESSION['senha']);
-					unset($_SESSION['admin']);
-					header('location:index.php');
-					
-				}
-			
+		require_once('../config/gerenciadordesessao.php');
+		$sessao = new GerenciadorDeSessao();
+		$sessao->isAdministrador();
 	?>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 	<title>Editar usuário - Sistema gTransp</title>

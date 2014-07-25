@@ -2,16 +2,9 @@
 	<head>
 		
 		<?php
-			session_start();
-			
-			if ((!isset($_SESSION['login']) == true) && (!isset($_SESSION['senha']) == true)) {
-					
-					unset($_SESSION['login']);
-					unset($_SESSION['senha']);
-					header('location:index.php');
-
-				}
-			
+			require_once('../config/gerenciadordesessao.php');
+			$sessao = new GerenciadorDeSessao();
+			$sessao->isAdministrador();
 		?>
 		
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -28,8 +21,8 @@
 				width:"800",
 				height:"300",
 				menubar:"edit insert view format table tools", 
-				plugins:["autolink charmap code image link media paste preview textcolor wordcount table"],
-				toolbar: "undo redo | copy paste cut | styleselect | bold italic | alignleft aligncenter alignright alignjustify | forecolor backcolor | media link image",
+				plugins:["autolink charmap code image link media paste preview textcolor wordcount table jbimages"],
+				toolbar: "undo redo | copy paste cut | styleselect | bold italic | alignleft aligncenter alignright alignjustify | forecolor backcolor | media link image | jbimages",
 				tools:"inserttable",
 				language:"pt_BR"		
 			});

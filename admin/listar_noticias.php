@@ -1,8 +1,11 @@
 <html>
 	<head>
 	<?php
-		session_start();
+			require_once('../config/gerenciadordesessao.php');
+			$sessao = new GerenciadorDeSessao();
+			$sessao->isAdministrador();
 	?>
+	
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 		<title> Lista de Notícias </title>
 		<link href="listar_noticias.css" rel="stylesheet" type="text/css" media="screen" />

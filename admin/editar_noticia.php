@@ -1,5 +1,11 @@
 <html>
 	<head>
+	
+		<?php
+			require_once('../config/gerenciadordesessao.php');
+			$sessao = new GerenciadorDeSessao();
+			$sessao->isAdministrador();
+		?>
 		
 		<?php
 		
@@ -38,8 +44,8 @@
 				width:"800",
 				height:"300",
 				menubar:"edit insert view format table tools", 
-				plugins:["autolink charmap code image link media paste preview textcolor wordcount table"],
-				toolbar: "undo redo | copy paste cut | styleselect | bold italic | alignleft aligncenter alignright alignjustify | forecolor backcolor | media link image",
+				plugins:["autolink charmap code image link media paste preview textcolor wordcount table jbimages"],
+				toolbar: "undo redo | copy paste cut | styleselect | bold italic | alignleft aligncenter alignright alignjustify | forecolor backcolor | media link image | jbimages",
 				tools:"inserttable",
 				language:"pt_BR"		
 			});

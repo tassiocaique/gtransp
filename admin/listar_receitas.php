@@ -1,7 +1,9 @@
 <html>
 	<head>
 	<?php
-		session_start();
+		require_once('../config/gerenciadordesessao.php');
+		$sessao = new GerenciadorDeSessao();
+		$sessao->isAdministrador();
 	?>
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 		<title> Lista de Receitas </title>
@@ -99,7 +101,7 @@
 					echo "<td>".date("d-m-Y", strtotime($conteudo['data_versao']))."</td>";
 					echo "<td>".$conteudo['identificacao']."</td>";
 					echo "<td>".$autor."</td>";
-					echo "<td><a href='editar_noticia.php?ctl=".$conteudo['cod_controle']."'><img src='../imagens/edit.png'></a></td>";
+					echo "<td><a href='editar_receita.php?ctl=".$conteudo['cod_controle']."'><img src='../imagens/edit.png'></a></td>";
 					echo "<td><input class='btn' type='image' src='../imagens/delete.png' value='Excluir' onClick='confirmarExclusao(".$conteudo['cod_controle'].")'/></td>";
 					echo "</tr>";
 						   

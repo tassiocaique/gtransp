@@ -23,7 +23,7 @@
 				<div id="info">
 						<?php
 							echo "<p>Nome:<b><u>".$_SESSION['nome']."</u></b></p>";
-							if ($_SESSION['admin'] == true) {
+							if (isset($_SESSION['admin'])) {
 								echo "<p>Privilégio:<b><u>Administrador</u></b></p>";
 							} else {
 								echo "<p>Privilégio:<b><u>Gerenciador</u></b></p>";
