@@ -12,7 +12,7 @@
 		$_UP['tamanho'] = 1204 * 1024 * 2 ;
 		
 		//Extensões permitidas
-		$_UP['extensoes'] = array("pdf", 'doc', 'odt', 'docx', 'ods', 'xls', 'xlsx',  'png', 'jpg');
+		$_UP['extensoes'] = array("pdf", 'doc', 'odt', 'docx', 'ods', 'xls', 'xlsx',  'png', 'jpg', 'csv');
 		
 		$_UP['renomeia'] = true;
 		

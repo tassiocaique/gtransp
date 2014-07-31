@@ -56,7 +56,7 @@
 						if ($resultado == "1") {
 							echo "<div class='success'><center><h3>Arquivo publicado com sucesso!</h3></center></div>";
 						} else {
-							echo "<div class='fail'><center><h5> Ocorreu um erro! Verifique se a extensão do arquivo é suportada (Extensões suportadas: 'pdf', 'doc', 'odt', 'docx', 'ods', 'xls', 'xlsx', 'png', 'jpg') e/ou se seu arquivo possui um tamanho máximo de 2mb</h5></center></div>";
+							echo "<div class='fail'><center><h5> Ocorreu um erro! Verifique se a extensão do arquivo é suportada (Extensões suportadas: 'pdf', 'doc', 'odt', 'docx', 'ods', 'xls', 'xlsx', 'png', 'jpg', 'csv') e/ou se seu arquivo possui um tamanho máximo de 2mb</h5></center></div>";
 						}
 					}
 			?>

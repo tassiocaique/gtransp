@@ -20,7 +20,7 @@
 								<li><a href="../pagina.php?id=estrutura">Estrutura Organizacional</a></li>
 							</ul>
 						</li>						
-						<li><a href="noticias">Notícias</a></li>
+						<li><a href="../noticias">Notícias</a></li>
 						<li><a href="../receitas">Receitas</a></li>
 						<li><a href="../despesas">Despesas</a></li>
 						<li><a href="../arquivos">Arquivos</a></li>

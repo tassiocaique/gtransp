@@ -94,7 +94,7 @@
 				<ul>
 					<li id="box-1"><a href="<?php echo $link1; ?>"><img src="imagens/destaque1.jpg"/></a></li>
 					<li id="box-2"><a href="<?php echo $link2; ?>"><img src="imagens/destaque2.jpg"/></a></li>
-					<li id="box-3"><a href="<?php echo $link2; ?>"><img src="imagens/destaque3.jpg"/></a></li>
+					<li id="box-3"><a href="<?php echo $link3; ?>"><img src="imagens/destaque3.jpg"/></a></li>
 				</ul>
 			</div>
 			<div id="pager"></div>

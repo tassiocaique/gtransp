@@ -62,12 +62,12 @@
 					<p class="divisor">Receitas</p>
 					<a href="nova_receita.php"><img class="options" src="../imagens/inserir_receita.png"/></a>
 					<a href="listar_receitas.php"><img class="options" src="../imagens/editar_receita.png"/></a>
-					<a href="../gtransp/receitas"><img class="options" src="../imagens/visualizar_receita	.png"/></a>
+					<a href="../receitas"><img class="options" src="../imagens/visualizar_receita	.png"/></a>
 					
 					<p class="divisor">Depesas</p>
 					<a href="nova_despesa.php"><img class="options" src="../imagens/inserir_despesa.png"/></a>
 					<a href="listar_despesas.php"><img class="options" src="../imagens/editar_despesas.png"/></a>
-					<a href="../gtransp/despesas"><img class="options" src="../imagens/visualizar_despesa.png"/></a>
+					<a href="../despesas"><img class="options" src="../imagens/visualizar_despesa.png"/></a>
 					
 					<p class="divisor">Arquivos</p>
 					<a href="novo_upload.php"><img class="options" src="../imagens/enviar_arquivo.png"/></a>
