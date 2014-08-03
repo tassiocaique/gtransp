@@ -18,10 +18,10 @@ class Conexao {
 	/*--------------------------------------------------------------------*/
 	/*             Parâmetros de configuração do banco de dados           */
 	/*--------------------------------------------------------------------*/
-	private static $host = "localhost";//"186.202.152.144"; //SERVIDOR DO BANCO DE DADOS
-	private static $user = "root";//"site13929453771"; //USUARIO DE CONEXÃO DO BANCO DE DADOS
-	private static $senha = "";//"belnelinda123"; //SENHA DE CONEXÃO DO BANCO DE DADOS
-	private static $banco = "gtransp";//"site13929453771"; //NOME DO BANCO DE DADOS
+	private static $host = "localhost";//SERVIDOR DO BANCO DE DADOS
+	private static $user = "root"; //USUARIO DE CONEXÃO DO BANCO DE DADOS
+	private static $senha = ""; //SENHA DE CONEXÃO DO BANCO DE DADOS
+	private static $banco = "gtransp";//NOME DO BANCO DE DADOS
 	/*--------------------------------------------------------------------*/
 	
 	//Define se a conexão deve ser persistente
