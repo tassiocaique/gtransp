@@ -23,6 +23,7 @@
 				menubar:"edit insert view format table tools", 
 				plugins:["autolink charmap code image link media paste preview textcolor wordcount table jbimages"],
 				toolbar: "undo redo | copy paste cut | styleselect | bold italic | alignleft aligncenter alignright alignjustify | forecolor backcolor | media link image | jbimages",
+				relative_urls:false,
 				tools:"inserttable",
 				language:"pt_BR"		
 			});

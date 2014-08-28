@@ -39,7 +39,7 @@
 
 	
 
-	$config['img_path'] = '/gtransp/uploads/'; // Relative to domain name
+	$config['img_path'] = '/gtransp/uploads'; // Relative to domain name
 	$config['upload_path'] = $_SERVER['DOCUMENT_ROOT'] . $config['img_path']; // Physical path. [Usually works fine like this
 	
 
@@ -118,7 +118,7 @@
 | -------------------------------------------------------------------*/
 
 	
-	$config['encrypt_name'] = FALSE;
+	$config['encrypt_name'] = TRUE;
 
 
 /*-------------------------------------------------------------------

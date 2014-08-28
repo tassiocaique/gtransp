@@ -14,7 +14,7 @@
 		<div id="pagina">
 		
 			<div id="header">
-				<div id="logo"><a href="#"><img src="../imagens/gtransp.png"/></a></div>
+				<div id="logo"><a href="home_admin.php"><img src="../imagens/gtransp.png"/></a></div>
 				<div id="info">
 						<?php
 							echo "<p>Nome:<b><u>".$_SESSION['nome']."</u></b></p>";
@@ -47,27 +47,27 @@
 				<th>Editar</th>
 				<tr class="linhapar">
 					<td><a href="">Apresentação</a></td>
-					<td><a href="editar_pagina.php?id=Apresentacao">Editar</a></td>
+					<td><a href="editar_pagina.php?id=Apresentacao"><img src="../imagens/edit.png" title="Editar"/></a></td>
 				</tr>
 				<tr class="linhaimpar">
 					<td><a href="">Pontos Turísticos</a></td>
-					<td><a href="editar_pagina.php?id=PontosTuristicos">Editar</a></td>
+					<td><a href="editar_pagina.php?id=PontosTuristicos"><img src="../imagens/edit.png" title="Editar"/></a></td>
 				</tr>
 				<tr class="linhapar">
 					<td><a href="">Histórico</a></td>
-					<td><a href="editar_pagina.php?id=Historico">Editar</a></td>
+					<td><a href="editar_pagina.php?id=Historico"><img src="../imagens/edit.png" title="Editar"/></a></td>
 				</tr>
 				<tr class="linhaimpar">
 					<td><a href="">Estrutura Organizacional</a></td>
-					<td><a href="editar_pagina.php?id=Estrutura">Editar</a></td>
+					<td><a href="editar_pagina.php?id=Estrutura"><img src="../imagens/edit.png" title="Editar"/></a></td>
 				</tr>
 				<tr class="linhapar">
 					<td><a href="">Contatos</a></td>
-					<td><a href="editar_pagina.php?id=Contatos">Editar</a></td>
+					<td><a href="editar_pagina.php?id=Contatos"><img src="../imagens/edit.png" title="Editar"/></a></td>
 				</tr>
 				<tr class="linhaimpar">
 					<td><a href="">Perguntas mais frequentes dos cidadãos</a></td>
-					<td><a href="editar_pagina.php?id=FAQ">Editar</a></td>
+					<td><a href="editar_pagina.php?id=FAQ"><img src="../imagens/edit.png" title="Editar"/></a></td>
 				</tr>
 			</table>
 		</div>
