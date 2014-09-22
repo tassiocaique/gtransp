@@ -61,8 +61,10 @@
 					$query = $db->query("SELECT * FROM `$tabela` WHERE `$tabela`.`cod_controle` = '$cod'");
 				
 					while ( $conteudo = $query->fetch(PDO::FETCH_ASSOC) ) {
-					
-						$consultaautor = $db->query("SELECT * FROM usuario WHERE cpf = '$conteudo[cpf_usuario]'");
+						
+						$tabela = Conexao::getTabela('TB_USUARIO');
+						
+						$consultaautor = $db->query("SELECT * FROM $tabela WHERE cpf = '$conteudo[cpf_usuario]'");
 						$autor = $consultaautor->fetch(PDO::FETCH_ASSOC);
 					
 					echo "  <div id='noticia'>

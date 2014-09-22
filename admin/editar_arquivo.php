@@ -33,6 +33,8 @@
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 		<title> Upload de arquivo </title>
 		<link href="editar_despesa.css" rel="stylesheet" type="text/css" media="screen" />
+		<link href="admin.css" rel="stylesheet" type="text/css" media="screen" />
+		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 	</head>
 
 <body>
@@ -40,7 +42,7 @@
 	
 	<div id="pagina">
 		<div id="header">
-			<div id="logo"><a href=""><img src="../imagens/gtransp.png"/></a></div>
+			<div id="logo"><a href="home_admin.php"><img height="75px" src="../imagens/gtransp.png"/></a></div>
 			<div id="info">
 				<?php
 					echo "<p>Nome:<b><u>".$_SESSION['nome']."</u></b></p>";
@@ -78,7 +80,7 @@
 			?>
 		
 			<h1>Upload de Arquivos Gerais</h1>
-			<h6>Se você deseja enviar um arquivo que não é referente a nenhuma <u>DESPESA</u>, por favor, retorne ao <a href="home_admin.php">Painel de Controle</a> e envie-o na seção correta. </h6>
+			<h6>Se você deseja enviar um arquivo que não é referente a uma <u>DESPESA</u> ou <u>RECEITA</u>, por favor, retorne ao <a href="home_admin.php">Painel de Controle</a> e envie-o na seção correta. </h6>
 			<form method="post" action="inserir_edicao.php" enctype="multipart/form-data">
 				<label>
 					<span>Identificação do documento: </span><br>

@@ -9,6 +9,8 @@
 		
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 		<link href="nova_noticia.css" rel="stylesheet" type="text/css" media="screen" />
+		<link href="admin.css" rel="stylesheet" type="text/css" media="screen" />
+		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 		<title>Editar página</title>
 		
 		<!-- Configurações do editor de texto -->
@@ -70,7 +72,7 @@
 	
 		<div id="pagina">
 			<div id="header">
-				<div id="logo"><a href=""><img src="../imagens/gtransp.png"/></a></div>
+				<div id="logo"><a href="home_admin.php"><img height="75px" src="../imagens/gtransp.png"/></a></div>
 				<div id="info">
 				<?php
 					echo "<p>Nome:<b><u>".$_SESSION['nome']."</u></b></p>";

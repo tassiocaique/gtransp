@@ -9,6 +9,7 @@
 		$login = $_POST['usuario'];
 		$senha = $_POST['senha'];
 		
+		
 		//Criptografa a senha recebida pelo usuário
 		$whirlpool = hash('whirlpool', $senha);
 			
@@ -22,10 +23,10 @@
 		//===================================================================================================================================================================================================================================================
 		
 		
-		$tabela = Conexao::getTabela('TB_USUARIO');	
+		$tabela = Conexao::getTabela('TB_USUARIO');
+			
 		//Faz uma busca na tabela usando os valores de login e senha inseridos
 		$query = $db->query("SELECT * FROM $tabela WHERE `cpf` = '$login' AND BINARY `senha` = '{$whirlpool}'");
-		
 		//Verifica se a busca retornou algum resultado
 		if (( $query->rowCount() ) > 0) {///Sim, retornou
 			
@@ -38,8 +39,9 @@
 			$_SESSION['nome']  = $conteudo['nome'];
 			$_SESSION['depto'] = $conteudo['departamento'];		
 			
+			$tabela = Conexao::getTabela('TB_CONTROLE_ACESSO');	
 			//Insere na tabela controle_acesso o usuário e o horário que o mesmo efetuou um login
-			$query2 = $db->query("INSERT INTO controle_acesso(cpf_usuario) VALUES('$login')") or die(mysql_error());
+			$query2 = $db->query("INSERT INTO $tabela(cpf_usuario) VALUES('$login')") or die(mysql_error());
 			
 			//Verifica se a inserção na tabela controle_acesso ocorreu corretamente
 			if ($query2) { //Inserção ocorreu corretamente
@@ -60,10 +62,7 @@
 		
 	} else {
 		//Aviso que os campos não foram preenchidos corretamente
-		echo "<script type='text/javascript'>
-				window.alert('Algum campo obrigatório não foi inserido. Reinsira os dados e tente novamente')
-				window.location.href='/nova_receita.php';
-			  </script>";
+		header('location:index.php?erro=1');
 	}
 	
 ?>

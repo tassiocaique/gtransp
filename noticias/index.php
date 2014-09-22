@@ -24,10 +24,10 @@
 						<li><a href="../receitas">Receitas</a></li>
 						<li><a href="../despesas">Despesas</a></li>
 						<li><a href="../arquivos">Arquivos</a></li>
-						<li><a href="">Licitações</a>
+						<li><a href="#">Licitações</a>
 							<ul>
-								<li><a href="">Em andamento</a></li>
-								<li><a href="">Encerradas</a></li>
+								<li><a href="../licitacoes/?t=licitacao_em_andamento">Em andamento</a></li>
+								<li><a href="../licitacoes/?t=licitacao_encerrada">Encerradas</a></li>
 							</ul>
 						</li>
 						<li><a href="../pagina.php?id=contatos">Contatos</a></li>
@@ -54,11 +54,14 @@
 				$db = Conexao::getInstance();
 				//===================================================================================================================================================================================================================================================
 				
+				
+				$tabela = Conexao::getTabela('TB_NOTICIAS');
+				
 				if(isset($_GET['pesquisa'])) {
 					$busca = $_GET['pesquisa'];
-					$query = $db->query("SELECT * FROM `noticias` WHERE (`noticias`.`visivel` = 1) AND ((`noticias`.`titulo` LIKE '%".$busca."%') OR ('%".$busca."%'))  ORDER BY `noticias`.`data_versao` DESC");
+					$query = $db->query("SELECT * FROM `$tabela` WHERE (`$tabela`.`visivel` = 1) AND ((`$tabela`.`titulo` LIKE '%".$busca."%') OR ('%".$busca."%'))  ORDER BY `$tabela`.`data_versao` DESC");
 				} else {
-					$query = $db->query("SELECT * FROM `noticias` WHERE `noticias`.`visivel` = 1 ORDER BY `noticias`.`data_versao` DESC");
+					$query = $db->query("SELECT * FROM `$tabela` WHERE `$tabela`.`visivel` = 1 ORDER BY `$tabela`.`data_versao` DESC");
 				}
 			
 				if ($query->rowCount() > 0) {
@@ -68,8 +71,11 @@
 					}
 				
 					while ( $conteudo = $query->fetch(PDO::FETCH_ASSOC) ) {
+						
+						
+						$tabela = Conexao::getTabela('TB_USUARIO');
 											
-						$consultaautor = $db->query("SELECT * FROM usuario WHERE cpf = '$conteudo[cpf_usuario]'");
+						$consultaautor = $db->query("SELECT * FROM $tabela WHERE cpf = '$conteudo[cpf_usuario]'");
 						$fetch = $consultaautor->fetch(PDO::FETCH_ASSOC);
 						$autor = $fetch['nome'];
 					

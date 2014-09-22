@@ -31,13 +31,11 @@ class Conexao {
 	/*                      Lista de Tabelas do Banco                     */
 	/*--------------------------------------------------------------------*/
 	private static $tabelas = array (
-		'TB_USUARIO'  => 'usuario',
-		'TB_DESPESA'  => 'despesa',
-		'TB_RECEITA'  => 'receita',
-		'TB_NOTICIAS' => 'noticias',
-		'TB_CONTROLE_ACESSO' => 'controle_acesso',
-		'TB_UPLOAD' => 'upload',
-		'TB_PAGINA' => 'pagina'
+		'TB_USUARIO'  => 'USUARIO',
+		'TB_NOTICIAS' => 'NOTICIAS',
+		'TB_CONTROLE_ACESSO' => 'CONTROLE_ACESSO',
+		'TB_UPLOAD' => 'UPLOAD',
+		'TB_PAGINA' => 'PAGINA'
 	);
 	/*--------------------------------------------------------------------*/
 	

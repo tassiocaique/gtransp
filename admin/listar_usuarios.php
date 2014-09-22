@@ -8,6 +8,8 @@
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 		<title> Lista de Usuários </title>
 		<link href="listar_noticias.css" rel="stylesheet" type="text/css" media="screen" />
+		<link href="admin.css" rel="stylesheet" type="text/css" media="screen" />
+		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 	
 		<script type="text/javascript">
 			function confirmarExclusao(id) {
@@ -23,7 +25,7 @@
 		<div id="pagina">
 		
 			<div id="header">
-				<div id="logo"><a href="#"><img src="../imagens/gtransp.png"/></a></div>
+				<div id="logo"><a href="home_admin.php"><img height="75px" src="../imagens/gtransp.png"/></a></div>
 				<div id="info">
 						<?php
 							echo "<p>Nome:<b><u>".$_SESSION['nome']."</u></b></p>";
@@ -101,7 +103,9 @@
 						$perm = "Administrador";
 					}
 					
-					$ultimoacessoquery = $db->query("SELECT * FROM controle_acesso WHERE `cpf_usuario` = '$conteudo[cpf]' ORDER BY `controle_acesso`.`data_acesso` DESC");
+					$tabela = Conexao::getTabela('TB_CONTROLE_ACESSO');
+						
+					$ultimoacessoquery = $db->query("SELECT * FROM $tabela WHERE `cpf_usuario` = '$conteudo[cpf]' ORDER BY `$tabela`.`data_acesso` DESC");
 					$ultimoacesso = $ultimoacessoquery->fetch(PDO::FETCH_ASSOC);
 						
 					echo "<tr class=".$classe.">";

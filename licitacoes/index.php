@@ -76,8 +76,9 @@
 						echo "<center><i>Exibindo resultados para: <b>".$busca."</b> . ".$query->rowCount()." resultado(s) encontrado(s)<br><br></i></center>";
 					}
 					while ( $conteudo = $query->fetch(PDO::FETCH_ASSOC) ) {
-					
-						$consultaautor = $db->query("SELECT * FROM usuario WHERE cpf = '$conteudo[cpf_usuario]'");
+							
+						$tabela = Conexao::getTabela('TB_USUARIO');
+						$consultaautor = $db->query("SELECT * FROM $tabela WHERE cpf = '$conteudo[cpf_usuario]'");
 						$fetch = $consultaautor->fetch(PDO::FETCH_ASSOC);
 						$autor = $fetch['nome'];
 					

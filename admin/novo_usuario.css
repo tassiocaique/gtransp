@@ -1,10 +1,3 @@
-body{
-	background:#eeeeee;
-	font-family:Verdana;
-	background:url('../imagens/bg.jpg');
-}
-
-
 .normal {
 	display:block;
 	border-radius:1px;
@@ -36,100 +29,6 @@ select {
 	
 }
 
-#pagina {
-	margin-right:auto;
-	margin-left:auto;
-	background:#fff;
-	-webkit-border-radius:10px;
-    -moz-border-radius:10px;
-    border-radius:10px;
-    border:1px solid #cbcbcb;
-}
-
-#header {
-	width:100%;
-	height:100px;
-	background:#424343;
-	margin-right:auto;
-	margin-left:auto;
-	display:inherit;
-	-webkit-border-radius:10px 10px 0px 0px;
-    -moz-border-radius:10px 10px 0px 0px;
-    border-radius:10px 10px 0px 0px;
-}
-
-#formulario {
-	width:800px;
-	padding:20px;
-}
-
-#navegacao {
-	width:100%;
-	height:30px;
-	margin-right:auto;
-	margin-left:auto;
-}
-
-#menu ul {
-	padding:0px;
-	margin:0px;
-	background:url('../imagens/menuadminbg.jpg')repeat-x;
-	list-style:none;
-
-}
-
-#menu ul li {
-	display:inline;
-	font-size:16px;
-}
-
-#menu ul li a {
-	padding: 5px 20px;
-	display:inline-block;
-	background:url('../imagens/menuadminbg.jpg')repeat-x;
-	color:#000;
-	text-decoration:none;
-}
-
-#menu ul li a:hover {
-	display:inline-block;
-	background:url('../imagens/menuadminbghover.jpg')repeat-x;
-	color:#fff;
-	text-decoration:none;
-}
-
-#info {
-	font-size:10px;
-	color:#fff;
-	float:right;
-	margin-top:-80px;
-	margin-right:20px;
-	height:80px;
-	text-align:center;
-	display:block;
-	
-}
-
-#logo {
-	padding:20px;
-}
-
-.logoutbtn {
-	color:#fff;
-	background:#f00;
-	padding:5px;
-	padding-left:10px;
-	padding-right:10px;
-	border-radius:5px;
-    -webkit-border-radius:5px;
-    -moz-border-radius:5px;
-	border:1px solid #9f0000;
-}
-
-.logoutbtn:hover {
-	background-color:#ff2424;
-}
-
 
 .button {
 	width:200px;
@@ -142,10 +41,6 @@ select {
     -moz-border-radius:10px;
 	border:1px solid #b7b7b7;
 } 
-
-.button:hover {
-	background-color:#686868;
-}
 
 .info {
 	width:780px;
@@ -163,20 +58,4 @@ select {
 
 .info span {
 	display:block;
-}
-
-.success {
-	width:800px;
-	height:50px;
-	padding:10px;
-	background:#9fff98;
-	border:1px solid #043f00;
-}
-
-.fail {
-	width:800px;
-	height:50px;
-	padding:20px;
-	background:#ffcece;
-	border:1px solid #b80606;
 }

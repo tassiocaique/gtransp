@@ -8,6 +8,8 @@
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 		<title> Lista de Despesas </title>
 		<link href="listar_noticias.css" rel="stylesheet" type="text/css" media="screen" />
+		<link href="admin.css" rel="stylesheet" type="text/css" media="screen" />
+		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 	
 		<script type="text/javascript">
 			function confirmarExclusao(id) {
@@ -23,7 +25,7 @@
 		<div id="pagina">
 		
 			<div id="header">
-				<div id="logo"><a href="#"><img src="../imagens/gtransp.png"/></a></div>
+				<div id="logo"><a href="home_admin.php"><img height="75px" src="../imagens/gtransp.png"/></a></div>
 				<div id="info">
 						<?php
 							echo "<p>Nome:<b><u>".$_SESSION['nome']."</u></b></p>";
@@ -93,7 +95,8 @@
 						$classe = "linhaimpar";
 					}
 					
-					$consultaautor = $db->query("SELECT * FROM usuario WHERE cpf = '$conteudo[cpf_usuario]'");
+					$tabela = Conexao::getTabela('TB_USUARIO');
+					$consultaautor = $db->query("SELECT * FROM $tabela WHERE cpf = '$conteudo[cpf_usuario]'");
 					$fetch = $consultaautor->fetch(PDO::FETCH_ASSOC);
 					$autor = $fetch['nome'];
 						

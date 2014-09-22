@@ -80,7 +80,7 @@
 						<li><a href="receitas">Receitas</a></li>
 						<li><a href="despesas">Despesas</a></li>
 						<li><a href="arquivos">Arquivos</a></li>
-						<li><a href="licitacoes">Licitações</a>
+						<li><a href="#">Licitações</a>
 							<ul>
 								<li><a href="licitacoes/?t=licitacao_em_andamento">Em andamento</a></li>
 								<li><a href="licitacoes/?t=licitacao_encerrada">Encerradas</a></li>

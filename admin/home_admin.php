@@ -20,11 +20,14 @@
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 		<title>Painel Administrador</title>
 		<link href="home_admin.css" rel="stylesheet" type="text/css" media="screen" />
+		<link href="admin.css" rel="stylesheet" type="text/css" media="screen" />
+		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+		
 	</head>
 	<body>
 		<div id="pagina">
 			<div id="header">
-				<div id="logo"><a href=""><img src="../imagens/gtransp.png"/></a></div>
+				<div id="logo"><a href="#"><img height="75px" src="../imagens/gtransp.png"/></a></div>
 				<div id="info">
 						<?php
 							echo "<p>Nome:<b><u>".$_SESSION['nome']."</u></b></p>";

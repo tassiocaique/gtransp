@@ -8,7 +8,7 @@
 	
 	<body>
 		<div id="header">
-			<center><div id="logo"><img src="../imagens/gtransp.png"/></div></center>
+			<center><div id="logo"><img height="75px" src="../imagens/gtransp.png"/></div></center>
 		</div>
 		<div id="logoprefeitura"><img src="../imagens/header.jpg"/></div>
 		<div id="wrapper">		

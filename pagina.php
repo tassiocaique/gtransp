@@ -1,7 +1,6 @@
 <html>
 	<head>
-		<?php
-			
+		<?php	
 				
 				if(isset($_GET['id'])) {
 				
@@ -21,7 +20,13 @@
 				$query = $db->query("SELECT * FROM `$tabela` WHERE `$tabela`.`visivel` = 1 AND `$tabela`.`identificacao`='$identificacao'");
 			
 				
-				$conteudo = $query->fetch(PDO::FETCH_ASSOC) ;				
+				$conteudo = $query->fetch(PDO::FETCH_ASSOC) ;
+				
+					if ($query->rowCount() === 0) {
+						$conteudo['titulo'] = "ERRO!";
+						$conteudo['corpo'] = "Essa página ainda não possui nenhum conteúdo";
+					}
+								
 				} else {
 					//pagina não encontrada
 				}
@@ -86,7 +91,7 @@
 			 
 		</div>
 		<div id="rodape">
-			<center><p>Portal desenvolvido como atividade do <a href="">PRO-SPB/UNIVASF</a>. Sua atualização é de responsabilidade da Prefeitura Municipal| <a href="../admin">Login</a></p></center>
+			<center><p>Portal desenvolvido como atividade do <a href="">PRO-SPB/UNIVASF</a>. Sua atualização é de responsabilidade da Prefeitura Municipal| <a href="admin/home_admin.php">Login</a></p></center>
 		</div>
 	</body>
 </html>

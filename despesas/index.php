@@ -24,10 +24,10 @@
 						<li><a href="../receitas">Receitas</a></li>
 						<li><a href="#">Despesas</a></li>
 						<li><a href="../arquivos">Arquivos</a></li>
-						<li><a href="">Licitações</a>
+						<li><a href="#">Licitações</a>
 							<ul>
-								<li><a href="">Em andamento</a></li>
-								<li><a href="">Encerradas</a></li>
+								<li><a href="../licitacoes/?t=licitacao_em_andamento">Em andamento</a></li>
+								<li><a href="../licitacoes/?t=licitacao_encerrada">Encerradas</a></li>
 							</ul>
 						</li>
 						<li><a href="../pagina.php?id=contatos">Contatos</a></li>
@@ -69,8 +69,9 @@
 						echo "<center><i>Exibindo resultados para: <b>".$busca."</b> . ".$query->rowCount()." resultado(s) encontrado(s)<br><br></i></center>";
 					}
 					while ( $conteudo = $query->fetch(PDO::FETCH_ASSOC) ) {
-				
-						$consultaautor = $db->query("SELECT * FROM usuario WHERE cpf = '$conteudo[cpf_usuario]'");
+							
+						$tabela = Conexao::getTabela('TB_USUARIO');
+						$consultaautor = $db->query("SELECT * FROM $tabela WHERE cpf = '$conteudo[cpf_usuario]'");
 						$fetch = $consultaautor->fetch(PDO::FETCH_ASSOC);
 						$autor = $fetch['nome'];
 					

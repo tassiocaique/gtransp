@@ -16,7 +16,7 @@ $lang['imglib_rotation_angle_required'] = "É necessário informar um angulo par
 $lang['imglib_writing_failed_gif'] = "Imagem em formato GIF.";
 $lang['imglib_invalid_path'] = "O caminho para a imagem está errado!";
 $lang['imglib_copy_failed'] = "A funcionalidade de cópia falhou!";//"The image copy routine failed.";
-$lang['imglib_missing_font'] = "Não foi possível encontrar a fonte para usá-la"//;"Unable to find a font to use.";
+$lang['imglib_missing_font'] = "Não foi possível encontrar a fonte para usá-la";//"Unable to find a font to use.";
 $lang['imglib_save_failed'] = "Não foi possível salvar a imagem. Por favor, verifique se o diretório suporta escrita";//"Unable to save the image.  Please make sure the image and file directory are writable.";
 
 
