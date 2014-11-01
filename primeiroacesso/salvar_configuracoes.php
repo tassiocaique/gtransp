@@ -101,7 +101,7 @@ se não, acesse o Portal do Software Público Brasileiro no endereço www.softwa
 	}
 	
 	if ($sucesso) {
-		header("location:configuracoes.php?r=1");
+		header("location:bemvindo.php");
 	} else {
 		header("location:configuracoes.php?r=0");
 	}

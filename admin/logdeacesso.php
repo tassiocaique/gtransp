@@ -14,43 +14,51 @@ Você deve ter recebido uma cópia da Licença Pública Geral GNU, sob o título
 se não, acesse o Portal do Software Público Brasileiro no endereço www.softwarepublico.gov.br ou escreva para a Fundação do Software Livre(FSF) Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301, USA
 
 -->
-<?php
-
-/*
-* Essa classe tem como intuito fazer a verificação do nível de autenticação de um usuário bem como se ele está autencidado ou não.
-*/
-
-class GerenciadorDeSessao {
-	
-	function __construct() {
-		session_start();
-	}
-	
-	public function isGerenciador() {
-		if ((!isset($_SESSION['login']) == true) && (!isset($_SESSION['senha']) == true)) {	
-					unset($_SESSION['login']);
-					unset($_SESSION['senha']);
-					header('location:index.php');
-					return false;
-
-		} else {
-			return true;
+<html>
+<head>
+	<?php
+			ob_start();
+			require_once('../config/gerenciadordesessao.php');
+			$sessao = new GerenciadorDeSessao();
+			$sessao->isAdministrador();
+	?>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<title>Log de acessos</title>
+	<style type="text/css">
+		body {background-color:#FFFFFF}
+		tr {
+			background:#F0F0EE;
 		}
-	}
-	
-	public function isAdministrador() {
-		if ($this->isGerenciador() && isset($_SESSION['admin'])) {
-			return true;
-		} else if($this->isGerenciador()){
-			header('location:home.php');
-		} else {
-			unset($_SESSION['login']);
-			unset($_SESSION['senha']);
-			header('location:index.php');
-			return false;
+		td, th {
+			padding:5px;
 		}
+		th {
+			background:#232323;
+			color:#FFFFFF;
+		}
+	</style>
+</head>
+	<body> 
+		<p><h3>Relatório de Acessos G-Transp - <?php echo date("Y-m-d h:m:s")?></h3></p>
+		<table>
+			<th>Usuário</th>
+			<th>Data/Hora de Acesso</th>
 		
-	}
-	
-}
-?>
+		<?php
+			require_once('../config/conexao.php');
+			$db = Conexao::getInstance();
+			$tabela = Conexao::getTabela('TB_CONTROLE_ACESSO');			
+			$query = $db->query("SELECT * FROM $tabela ORDER BY 1 DESC");
+			while ($conteudo = $query->fetch(PDO::FETCH_ASSOC)) {
+				echo "<tr>";
+				echo "<td>".$conteudo['cpf_usuario']."</td>";
+				echo "<td>".$conteudo['data_acesso']."</td>";
+			}
+					
+		?>
+		</table>
+		<br/>
+		<br/>
+		<a href="home_admin.php"> Voltar ao Painel de Controle</a>
+	</body>
+</html>

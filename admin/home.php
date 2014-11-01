@@ -1,6 +1,23 @@
+<!--
+
+Copyright 2014 - Aplicativaria - Gestão e Desenvolvimento de Soluções Móveis <www.aplicativaria.com>, 
+Programa de Formação de Agentes para Sustentabilidade do Software Público Brasileiro (PRO-SPB) <spb.univasf.edu.br> - Universidade Federal do Vale do São Francisco.
+Desenvolvedores: Tássio Caique Dias Freire <tassiok2@gmail.com>, João Paulo dos Santos Nascimento Castro <joaopaulosncastro@gmail.com>.
+
+Este arquivo é parte do programa G-Transp - Gerenciador de Conteúdo Público, ou simplesmente G-Transp.
+O G-Transp é um software livre; você pode redistribuí-lo e/ou modificá-lo dentro dos termos da Licença Pública Geral 
+GNU como publicada pela Fundação do Software Livre (FSF); na versão 2 da Licença.
+Este programa é distribuído na esperança que possa ser  útil, mas SEM NENHUMA GARANTIA; sem uma garantia implícita de 
+ADEQUAÇÃO a qualquer  MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a Licença Pública Geral GNU/GPL em português para maiores
+ detalhes.
+Você deve ter recebido uma cópia da Licença Pública Geral GNU, sob o título "LICENCA.txt", junto com este programa, 
+se não, acesse o Portal do Software Público Brasileiro no endereço www.softwarepublico.gov.br ou escreva para a Fundação do Software Livre(FSF) Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301, USA
+
+-->
 <html>
 	<head>
 		<?php
+			ob_start();
 			session_start();
 			
 			if ((!isset($_SESSION['login']) == true) && (!isset($_SESSION['senha']) == true)) {
@@ -15,11 +32,13 @@
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 		<title>Painel Gerenciador</title>
 		<link href="home_admin.css" rel="stylesheet" type="text/css" media="screen" />
+		<link href="admin.css" rel="stylesheet" type="text/css" media="screen" />
+		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>		
 	</head>
 		<body>
 		<div id="pagina">
 			<div id="header">
-				<div id="logo"><a href=".."><img src="../imagens/gtransp.png"/></a></div>
+				<div id="logo"><a href=".."><img height="75px" src="../imagens/gtransp.png"/></a></div>
 				<div id="info">
 						<?php
 							echo "<p>Nome:<b><u>".$_SESSION['nome']."</u></b></p>";

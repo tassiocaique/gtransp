@@ -15,29 +15,82 @@ se não, acesse o Portal do Software Público Brasileiro no endereço www.softwa
 
 -->
 <?php
-	
+//	session_start();
 	ob_start();
-	session_start();
-	
-	//Verificação de todos os campos obrigatórios estão preenchidos
-	if (isset($_POST['titulo']) && isset($_POST['corpo']) && isset($_POST['cod_controle']) && isset($_POST['cod_noticia']))	{	
-		
-		//recupera os valores que foram passados no formulário		
-		$titulo = $_POST['titulo'];
-		$corpo = $_POST['corpo'];
-		$cod_controle = $_POST['cod_controle'];
-		$cod_noticia = $_POST['cod_noticia'];
-		
-		//Verifica se o campo não obrigatório categorias foi preenchido
-		if (isset($_POST['categorias'])) {//Se sim, recupera o valor
-			$categorias = $_POST['categorias'];
-		} else {//Se não, atribui a ele um valor padrão
-			$categorias = "sem categoria";
+	function validaCPF($cpf) {
+		if (empty($cpf)){
+			return FALSE;
 		}
 		
-		//recupera o CPF do usuário da sessão
-		$cpf_usuario = $_SESSION['login'];
-				
+		//Elimina máscara
+		$cpf = ereg_replace('[^0-9]','', $cpf);
+		$cpf = str_pad($cpf, 11, '0', STR_PAD_LEFT);
+		
+		//Verifica se o número de dígitos informados é igual a 11
+		if(strlen($cpf) != 11) {
+			return FALSE;
+		} else if ($cpf == '00000000000' ||
+        $cpf == '11111111111' ||
+        $cpf == '22222222222' ||
+        $cpf == '33333333333' ||
+        $cpf == '44444444444' ||
+        $cpf == '55555555555' ||
+        $cpf == '66666666666' ||
+        $cpf == '77777777777' ||
+        $cpf == '88888888888' ||
+        $cpf == '99999999999') {
+        	return FALSE;
+        } else {
+        	for($t = 9; $t < 11; $t++) {
+        		for ($d = 0, $c = 0; $c < $t; $c++) {
+                $d += $cpf{$c} * (($t + 1) - $c);
+            }
+            $d = ((10 * $d) % 11) % 10;
+            if ($cpf{$c} != $d) {
+                return FALSE;
+            }
+        	}
+			return TRUE;
+        }
+	}
+	
+	//Verificação de todos os campos obrigatórios estão preenchidos
+	if((isset($_POST['nome']) && isset($_POST['senha']) && isset($_POST['rsenha']) && isset($_POST['login']) && isset($_POST['departamento'])) ) {
+		
+		//recupera os valores que foram passados no formulário		
+		$nome = $_POST['nome'];
+		$login = $_POST['login'];
+		$login = str_replace(".", "",  $login);
+		$login = str_replace("-", "", $login);
+		$senha = $_POST['senha'];
+		$rsenha = $_POST['rsenha'];
+			
+		
+		if (validaCPF($login) === FALSE) {
+			header("location:index.php?r=1");
+			break;
+		}
+		
+		if(strcmp($senha, $rsenha) != 0) {
+			header("location:index.php?r=2");
+			break;	
+		}
+		
+		
+		
+		$whirlpool = hash('whirlpool', $senha); //criptografa a senha
+		
+		$permissao = $_POST['nivel_permissao'];
+		
+		$dpto = $_POST['departamento'];
+		
+		//Verifica se o usuário foi definido como administrador
+		if (strcmp($permissao, "admin") == 0) { //Se sim, define o valor do campo como 1
+			$perm = '1';
+		} else { //Se não, define o valor do campo como 0
+			$perm = '0';
+		}
+		
 		/* ========================================== Estabelece a conexão com o banco de dados fazendo uso da classe Conexão =============================================================================================================================*/
 		
 		//Inclui o arquivo conexao.php para podermos fazer uso do mesmo
@@ -48,27 +101,20 @@ se não, acesse o Portal do Software Público Brasileiro no endereço www.softwa
 		//===================================================================================================================================================================================================================================================
 		
 		//Pega o nome da tabela
-		$tabela = Conexao::getTabela('TB_NOTICIAS');
+		$tabela = Conexao::getTabela('TB_USUARIO');	
 		//Comando de inserção do registro na tabela
-		$query = $db->query("INSERT INTO $tabela(cpf_usuario, titulo, corpo, categorias, cod_noticia, editado)
-		                                  VALUES ('$cpf_usuario', '$titulo', '$corpo', '$categorias', '$cod_noticia', 1)")or die(mysql_error());
+		$query = $db->query("INSERT INTO $tabela(nome, cpf, senha, departamento, nivel_permissao) VALUES('$nome', '$login', '$whirlpool', '$dpto', '$perm')") or die(mysql_error());
 		
-		$id = $db->lastInsertId('cod_controle');
-		
-		$query2 = $db->query("UPDATE $tabela SET editado = 1, visivel = 0 WHERE cod_controle='$cod_controle' AND cod_noticia='$cod_noticia'") or die(mysql_error());
-		
-		
-		if ($query && $query2) {
-			header("location:editar_noticia.php?r=1&ctl=".$id);
+		if($query) {
+			header("location:configuracoes.php");	
 		} else {
-			header("location:editar_noticia.php?r=2");
+			header("location:index.php?r=0");	
+			
 		}
-		
 		
 	} else {
 		//Aviso que os campos não foram preenchidos corretamente
-		header("location:editar_noticia.php?r=0");
+		header("location:index.php?r=0");
 	}
-
 
 ?>
